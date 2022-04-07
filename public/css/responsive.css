@@ -1,5 +1,5 @@
 /* 1024px */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
     body {
         width: 100%;
         margin: 0;
@@ -39,11 +39,52 @@
     li:last-of-type{
         border: 3px solid #7e837d
     }
+
+    .contenairCard{
+        display: flex;
+        gap:5%;
+        justify-content: center;
+        margin-top:55px;
+    
+    }
+    
+    .card {
+        background-color: #fdfdfd;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        width:20%;
+    }
+    
+    .card img {
+        width: 100%;
+    }
+    
+    .card p{
+        font-weight: bold;
+        text-align: center;
+        padding: 65px 10px;
+        position: relative;
+    
+    }
+    
+    .card p::before{
+        content:'';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        left: calc(50% - 15px);
+        bottom: 125px;
+        background-color: #84948a;
+    }
+
+    label, label i, #menu-toggle {
+        display: none;
+      }
     
 }
 
 /* 740px à 1024px */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media screen and (min-width: 740px) and (max-width: 1023px) {
     body {
         width: 100%;
         margin: 0;
@@ -78,6 +119,9 @@
         text-transform: uppercase;
         padding: 30px 15px;
         color:#7e837d;
+    }
+    li:last-of-type{
+        border: none;
     }
     
     .title {
@@ -185,12 +229,47 @@
         height: 50px;
         width:70%;
     }
-      
+
+     /* BURGER MENU */
+
+
+label {
+    text-align: right;
+    background-color: #f4f6f3;
+    cursor: pointer;
+    height: 20px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  label i {
+      font-size: 15px;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu {
+    background-color:#f4f6f3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  #menu-toggle:checked + #menu {
+    max-height: 100px;
+  }
+
 }
 
 
 /* 320px à 740px */
-@media (min-width: 320px) and (max-width: 740px) {
+@media screen and (min-width: 320px) and (max-width: 740px) {
     body {
         width: 100%;
         margin: 0;
@@ -216,12 +295,12 @@
         justify-content: flex-end;
         flex-direction: column;
         gap:5%;
-        padding: 15px;
+        padding: 10px;
     }
     
     ul li a {
         text-decoration: none;
-        font-size: 25px;
+        font-size: 18px;
         text-transform: uppercase;
         padding: 30px 15px;
         color:#7e837d;
@@ -240,11 +319,15 @@
     }
     
     .title h4 {
-        text-align: center;
-        text-transform: uppercase;
-        color:#494e48;
-        position: relative;
         margin-top: 15px;
+    }
+
+    .title h4::after {
+        left: 70px;
+    }
+
+    li:last-of-type{
+        border: none;
     }
     
     /* SECTION */
@@ -278,22 +361,25 @@
         justify-content: center;
         align-items: center;
         margin-top:55px;
+       
     
     }
     
     .card {
-        width:70%;
+        width:100%;
+        box-shadow: none;
     }
     
     .card p{
         font-weight: bold;
         text-align: center;
-        padding: 65px 10px;
+        padding: 65px 0px;
         position: relative;
         
     }
 
-    
+    /* ABOUT */
+
     .contenudg{
         display: flex;
         flex-direction: column;
@@ -310,7 +396,7 @@
     .droite {
         width:100%;
         background-color: #fdfdfd;
-        height: 50vh;
+        height: auto;
     }
     
     .contenudg h3 {
@@ -332,6 +418,59 @@
         height: 50px;
         width:70%;
     }
+
+    /* FOOTER */
+
+    footer {
+        background-color: #fdfdfd;
+        width: 100%;
+        height: 20vh;
+        padding: 10px 0px;
+    }
+
+    footer .contenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:0;
+    }
       
-    
+    .icons {
+        padding:0px;
+    }
+    /* BURGER MENU */
+
+
+label {
+    text-align: right;
+    background-color: #f4f6f3;
+    cursor: pointer;
+    height: 20px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  label i {
+      font-size: 15px;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu {
+    background-color:#f4f6f3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  #menu-toggle:checked + #menu {
+    max-height: 100px;
+  }
 }
